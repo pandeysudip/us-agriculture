@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-.DS.Store
+.DS_Store
 #api keys
 api_keys.py
 # Distribution / packaging
