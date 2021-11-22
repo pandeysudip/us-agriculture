@@ -5,13 +5,13 @@ from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-def scraper():
+def scrape():
     # set up Splinter
     executable_path = {"executable_path": ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=True)
 
     # visit news page
-    x = 'maze'
+    x = 'Broccoli'
     url = f"https://www.agriculture.com/search?search_api_views_fulltext={x}&sort_by=search_api_relevance&sort_by=search_api_relevance"
     browser.visit(url)
 
@@ -36,18 +36,18 @@ def scraper():
 
     # visit image
 
-    url = f"https://world-crops.com/{x}/"
-    browser.visit(url)
+    url2 = f"https://world-crops.com/{x}/"
+    browser.visit(url2)
 
     time.sleep(2)
 
     # scrape page into soup
-    html = browser.html
-    soup = BeautifulSoup(html, "lxml")
+    html_img = browser.html
+    soup_img = BeautifulSoup(html_img, "lxml")
 
     # get the data
 
-    image = soup.find_all('img')[1]["src"]
+    image = soup_img.find_all('img')[1]["src"]
 
     # store data in dictionary
 

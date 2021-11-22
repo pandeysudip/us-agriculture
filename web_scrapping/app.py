@@ -8,8 +8,11 @@ app = Flask(__name__)
 # Use PyMongo to establish Mongo connection
 #mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 client = MongoClient("mongodb://localhost:27017")
+# create database
+db = client['us-agriculture']
+# creating collection
+News = db['news']
 
-ag_news = client.AgNews.news  # collection name
 # Route to render index.html template using data from Mongo
 
 
@@ -17,10 +20,10 @@ ag_news = client.AgNews.news  # collection name
 def home():
 
     # Find one record of data from the mongo database
-    news_data = ag_news.find_one()
+    News_data = News.find_one()
 
     # Return template and data
-    return render_template("index.html", mission_news=news_data)
+    return render_template("index.html", mission_news=News_data)
 
 
 # Route that will trigger the scrape function
@@ -28,10 +31,10 @@ def home():
 def scrape():
 
     # Run the scrape function
-    news_datas = news.scraper()
+    news_datas = news.scrape()
 
     # Update the Mongo database using update and upsert=True
-    ag_news.update({}, news_datas, upsert=True)
+    News.update({}, news_datas, upsert=True)
 
     # Redirect back to home page
     return redirect("/")
