@@ -11,7 +11,7 @@ def scrape():
     browser = Browser('chrome', **executable_path, headless=True)
 
     # visit news page
-    x = 'Broccoli'
+    x = 'Orange'
     url = f"https://www.agriculture.com/search?search_api_views_fulltext={x}&sort_by=search_api_relevance&sort_by=search_api_relevance"
     browser.visit(url)
 
