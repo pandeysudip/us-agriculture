@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>plots</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+        <!-- Leaflet JavaScript code -->
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+          integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+          crossorigin=""></script>
+
+        <!-- Our CSS -->
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  </head>
+    <body>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg bg-black navbar-dark fixed-top">
+            <div class="container">
+                <li role="presentation" class="active">
+                    <a href="index.html" class="navbar-brand bg-success px-5"> US Agriculture</a>
+                </li>
+                
+            </div>
+            <div class="container">
+              <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse"
+                data-bs-target="#navmenu"
+              >
+              <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto" >
+                        <li  class="nav-item">
+                            <div class="dropdown show ">
+                                <a class="btn btn-secondary bg-black dropdown-toggle lead text-primary p-2" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Maps
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a role="presentation" class="dropdown-item lead text-success bg-black" href="crops_map.html">Field_Crop</a>
+                                    <a role="presentation" class="dropdown-item lead text-success bg-black" href="vegetables_map.html">Vegetables</a>
+                                    <a role="presentation" class="dropdown-item lead text-success bg-black" href="fruits_map.html">Fruits</a>
+                                    <a role="presentation" class="dropdown-item lead text-success bg-black" href="weather.html">Weather</a>
+                                </div>
+                            </div>  
+                        </li>
+                        </li>
+                        <li role="presentation" class="nav-item" >
+                            <a href="plots.html" class="nav-link lead text-primary">Plots</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="data.html" class="nav-link lead text-primary">Data</a>
+                        </li>
+                    </ul>
+              </div>
+            </div>
+        </nav>
+        <!--body-->
+        <section id="tal" class="bg-muted text-dark p-5 mt-5 text-center text-sm-start">
+            <div class="container">
+                <div class="d-sm-flex">
+                    <div class="container">
+                        <h1 class=" p-3 text-success text-center">Scatter Plots</h1>
+                        <img class="img-fluid  " src="" alt="picture" />
+                        <div>
+                            <p>
+                                There i
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h1 class=" p-3 text-info text-center">Visulizations</h1>
+                        <div class="d-sm-flex">
+                            <div class="column text-center">
+                                <div class="col-md">
+                                    <div class="card-body text-center">
+                                        <h6 class="card-title mb-3 text-danger">
+                                             
+                                        </h6>
+                                        <div class="card-image">
+                                            <a href="temp.html">
+                                                <img class="img-fluid  " src="" alt="picture" />
+                                            </a>
+                    
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="card-body text-center">
+
+                                        <h6 class="card-title mb-3 text-danger">
+                                            
+                                        </h6>
+                                        <div class="card-image">
+                                            <a href="humidity.html">
+                                                <img id="temp" class="img-fluid   border-dark" src="" alt="picture" />
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="column text-center">
+                                <div class="col-md">
+                                    <div class="card-body text-center">
+
+                                            <h6 class="card-title mb-3 text-danger">
+                                                
+                                            </h6>
+                                            <div class="card-image">
+                                                <a href="cloudness.html">
+                                                    <img class="img-fluid  " src="" alt="picture" />
+                                                </a> 
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="card-body text-center ">
+
+                                    <h6 class="card-title mb-3 text-danger">
+                                        
+                                    </h6>
+                                    <div class="card-image">
+                                        <a href="windspeed.html">
+                                            <img class="img-fluid  " src="" alt=" picture" />
+
+                                        </a>
+                                    </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+
+        <footer>
+            <p>Copyright &copy; Project3Group4</p>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
+
