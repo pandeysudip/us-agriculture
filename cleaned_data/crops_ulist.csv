@@ -1,0 +1,152 @@
+cropname,category
+BARLEY,field crops
+CORN,field crops
+COTTON,field crops
+"FIELD CROPS, OTHER",field crops
+GRAIN,field crops
+HAY,field crops
+HAY & HAYLAGE,field crops
+HAYLAGE,field crops
+OATS,field crops
+PEANUTS,field crops
+RYE,field crops
+SOYBEANS,field crops
+WHEAT,field crops
+GRASSES,field crops
+GRASSES & LEGUMES TOTALS,field crops
+LEGUMES,field crops
+PEAS,field crops
+SORGHUM,field crops
+SESAME,field crops
+SUNFLOWER,field crops
+HERBS,field crops
+"GRASSES & LEGUMES, OTHER",field crops
+CANOLA,field crops
+BEANS,field crops
+BUCKWHEAT,field crops
+MINT,field crops
+JOJOBA,field crops
+CHICKPEAS,field crops
+RICE,field crops
+CAMELINA,field crops
+MILLET,field crops
+MAPLE SYRUP,field crops
+HOPS,field crops
+SAFFLOWER,field crops
+POPCORN,field crops
+MUSTARD,field crops
+TRITICALE,field crops
+WILD RICE,field crops
+EMMER & SPELT,field crops
+DILL,field crops
+SUGARBEETS,field crops
+TARO,field crops
+LENTILS,field crops
+FLAXSEED,field crops
+TOBACCO,field crops
+RAPESEED,field crops
+SUGARCANE,field crops
+SWITCHGRASS,field crops
+MISCANTHUS,field crops
+GUAR,field crops
+BEANS,vegetables
+CUCUMBERS,vegetables
+EGGPLANT,vegetables
+GREENS,vegetables
+MELONS,vegetables
+OKRA,vegetables
+PEAS,vegetables
+PEPPERS,vegetables
+POTATOES,vegetables
+PUMPKINS,vegetables
+SQUASH,vegetables
+SWEET CORN,vegetables
+SWEET POTATOES,vegetables
+TOMATOES,vegetables
+TURNIPS,vegetables
+VEGETABLE TOTALS,vegetables
+"VEGETABLES, OTHER",vegetables
+CABBAGE,vegetables
+ONIONS,vegetables
+BROCCOLI,vegetables
+LETTUCE,vegetables
+BEETS,vegetables
+CARROTS,vegetables
+SPINACH,vegetables
+RADISHES,vegetables
+GARLIC,vegetables
+HERBS,vegetables
+ASPARAGUS,vegetables
+BRUSSELS SPROUTS,vegetables
+ESCAROLE & ENDIVE,vegetables
+CAULIFLOWER,vegetables
+GINGER ROOT,vegetables
+HORSERADISH,vegetables
+GINSENG,vegetables
+CELERY,vegetables
+PARSLEY,vegetables
+RHUBARB,vegetables
+DAIKON,vegetables
+ARTICHOKES,vegetables
+WATERCRESS,vegetables
+CHICORY,vegetables
+APPLES,fruits
+BERRY TOTALS,fruits
+BLUEBERRIES,fruits
+FIGS,fruits
+FRUIT & TREE NUT TOTALS,fruits
+GRAPES,fruits
+NECTARINES,fruits
+NON-CITRUS TOTALS,fruits
+ORCHARDS,fruits
+PEACHES,fruits
+PEARS,fruits
+PECANS,fruits
+PLUMS,fruits
+PLUMS & PRUNES,fruits
+TREE NUT TOTALS,fruits
+PERSIMMONS,fruits
+BLACKBERRIES,fruits
+CITRUS TOTALS,fruits
+GRAPEFRUIT,fruits
+LEMONS,fruits
+LIMES,fruits
+POMEGRANATES,fruits
+RASPBERRIES,fruits
+TANGERINES,fruits
+"TREE NUTS, OTHER",fruits
+CHESTNUTS,fruits
+APRICOTS,fruits
+STRAWBERRIES,fruits
+ALMONDS,fruits
+HAZELNUTS,fruits
+KUMQUATS,fruits
+"NON-CITRUS, OTHER",fruits
+ORANGES,fruits
+CHERRIES,fruits
+ELDERBERRIES,fruits
+TANGELOS,fruits
+WALNUTS,fruits
+ARONIA BERRIES,fruits
+"BERRIES, OTHER",fruits
+PASSION FRUIT,fruits
+KIWIFRUIT,fruits
+PLUM-APRICOT HYBRIDS,fruits
+OLIVES,fruits
+GUAVAS,fruits
+CURRANTS,fruits
+PISTACHIOS,fruits
+DATES,fruits
+"CITRUS, OTHER",fruits
+BOYSENBERRIES,fruits
+AVOCADOS,fruits
+MACADAMIAS,fruits
+LOGANBERRIES,fruits
+PRUNES,fruits
+CHERIMOYAS,fruits
+PAPAYAS,fruits
+BANANAS,fruits
+COFFEE,fruits
+MANGOES,fruits
+CRANBERRIES,fruits
+PINEAPPLES,fruits
