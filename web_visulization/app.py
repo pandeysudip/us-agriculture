@@ -60,52 +60,34 @@ def plots_index():
 def field_crops_index():
     # Store the entire collection as a list
     crops_list = list(field_crops.find())
-    vegetable_list = list(vegetables.find())
-    fruits_list = list(fruits.find())
-    weather_list = list(weather.find())
-    news_list = list(news.find())
 
     # Return the template
-    return render_template('crops_map.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('crops_map.html', crops_list=crops_list)
 
 
 @app.route('/fruits_map.html')
 def fruits_index():
     # Store the entire collection as a list
-    crops_list = list(field_crops.find())
-    vegetable_list = list(vegetables.find())
     fruits_list = list(fruits.find())
-    weather_list = list(weather.find())
-    news_list = list(news.find())
-
     # Return the template
-    return render_template('fruits_map.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('fruits_map.html', fruits_list=fruits_list)
 
 
 @app.route('/vegetables_map.html')
 def vegetables_index():
     # Store the entire collection as a list
-    crops_list = list(field_crops.find())
     vegetable_list = list(vegetables.find())
-    fruits_list = list(fruits.find())
-    weather_list = list(weather.find())
-    news_list = list(news.find())
 
     # Return the template
-    return render_template('vegetables_map.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('vegetables_map.html',  vegetable_list=vegetable_list)
 
 
 @app.route('/weather.html')
 def weather_index():
     # Store the entire collection as a list
-    crops_list = list(field_crops.find())
-    vegetable_list = list(vegetables.find())
-    fruits_list = list(fruits.find())
     weather_list = list(weather.find())
-    news_list = list(news.find())
-
     # Return the template
-    return render_template('weather.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('weather.html', weather_list=weather_list)
 
 
 @app.route('/data.html')

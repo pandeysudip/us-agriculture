@@ -1,3 +1,38 @@
+// An array of cities and their locations
+
+var cities = [
+    {
+        name: "New York",
+        lat: 40.7128,
+        lon: -74.0059,
+        population: 8550405
+    },
+    {
+        name: "Chicago",
+        lat: 41.8781,
+        lon: -87.6298,
+        population: 2720546
+    },
+    {
+        name: "Houston",
+        lat: 29.7604,
+        lon: -95.3698,
+        population: 2296224
+    },
+    {
+        name: "Los Angeles",
+        lat: 34.0522,
+        lon: -118.2437,
+        population: 3971883
+    },
+    {
+        name: "Omaha",
+        lat: 41.2524,
+        lon: -95.9980,
+        population: 446599
+    }
+];
+
 
 // Create the tile layer that will be the background of our map.
 var streetmap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -83,27 +118,37 @@ var baseMaps = {
     "Google Sat": googleSat
 };
 //marker
-var singleMarker = L.marker([37.09, -95.71], { draggable: true });
+// An array that will store the created cityMarkers
+var cityMarkers = [];
 
-// Getting our GeoJSON data
-var county = d3.json("us-county.geojson").then(function (data) {
-    // Creating a GeoJSON layer with the retrieved data
-    L.geoJson(data)//.addTo(myMap);
-});
+for (var i = 0; i < cities.length; i++) {
+    // loop through the cities array, create a new marker, and push it to the cityMarkers array
+    cityMarkers.push(
+        L.marker([cities[i].lat, cities[i].lon]).bindPopup("<h1>" + cities[i].name + "</h1>")
+    );
+}
+
+// Add all the cityMarkers to a new layer group.
+// Now, we can handle them as one group instead of referencing each one individually.
+var cityLayer = L.layerGroup(cityMarkers);
+
 
 // Create an overlay object to hold our overlay.
 var overlayMaps = {
-    "First Marker": singleMarker
+    "City Marker": cityLayer
 };
 
 // Create our map, giving it the streetmap and earthquakes layers to display on load.
 var myMap = L.map("map", {
     center: [37.09, -95.71],
     zoom: 5,
-    layers: [watercolor, singleMarker]
+    layers: [watercolor, cityLayer]
 });
 
 // Add the layer control to the map.
 L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
 }).addTo(myMap);
+
+
+
