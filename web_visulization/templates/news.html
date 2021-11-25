@@ -75,30 +75,45 @@
         <div class="container-fluid">
             <div class="jumbotron text-center bg-dark text-light mt-5 p-5">
                 <h1><span class="text-info">Agriculture News</span></h1>
-                <p><a class="btn btn-primary btn-lg" href="/scraper" role="button">Scrape News</a></p>
+                <h3><span class="text-warning">Please select the crop type</span></h3>
+                <select id="selDataset" onchange="optionChanged(this.value)">
+                    {% for c in mission_cropslist.crops %}
+                    <option>{{ c }}</option>
+                    {% endfor %}
+                </select>
+                
             </div >
             <div class="bg-secondary text-center text-light  p-3">
-                <h1 class="text-danger"> News:</h1>
+               
+                
                 <h3>{{ mission_news.news_title }}</h3>
                 <p class="text-warning">{{ mission_news.news_p }}</p>
             </div>
         </div>
         <div class="d-md-flex ">
             <div class="container-fluid bg-black text-center">
-                <h1 class="text-white p-3">News Image</h1>
+                <h5 class="text-white p-3">News Image</h5>
                 <img src={{ mission_news.news_image_url }} alt="news">
             </div>
             
         </div>
-        <div class="container-fluid bg-dark">
-            <div class="d-md-flex ">
-                <div class="container-fluid bg-black text-center">
-                    <h1 class="text-white p-3">Image</h1>
-                    <img src={{ mission_news.image}} alt="image">
-                </div>
+    </div>
+    <div class="container-fluid bg-dark">
+        <div class="d-md-flex ">
+            <div class="container-fluid bg-black text-center">
                 
+                <img src={{ mission_news.image}} alt="image">
             </div>
+            
         </div>
+    </div>
+
+    <script>
+        function optionChanged(val){
+            console.log(val);
+            window.location.assign("/scraper/" + val);
+        }
+    </script>
        
         <footer>
             <p>Copyright &copy; Project3Group4</p>

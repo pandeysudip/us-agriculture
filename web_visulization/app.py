@@ -15,6 +15,7 @@ vegetables = db['vegetables']
 fruits = db['fruits']
 weather = db['weather']
 news = db['news']
+croplist = db['croplist']
 
 
 @app.route('/index.html')
@@ -107,17 +108,18 @@ def data_index():
 def news_index():
     # Find one record of data from the mongo database
     news_list = news.find_one()
+    crop_list = croplist.find_one()
 
     # Return the template with the teams list passed in
-    return render_template('news.html', mission_news=news_list)
+    return render_template('news.html', mission_news=news_list, mission_cropslist=crop_list)
 
 # Route that will trigger the scrape function
 
 
-@app.route("/scraper")
-def news_scraper():
+@app.route("/scraper/<name>")
+def news_scraper(name):
     # Run the scrape function
-    news_datas = ag_news.scrape()
+    news_datas = ag_news.scrape(name)
     # Update the Mongo database using update and upsert=True
     news.update({}, news_datas, upsert=True)
     # Redirect back to home page

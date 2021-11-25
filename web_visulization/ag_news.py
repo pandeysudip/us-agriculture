@@ -5,13 +5,13 @@ from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-def scrape():
+def scrape(x):
     # set up Splinter
     executable_path = {"executable_path": ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=True)
 
     # visit news page
-    x = 'maze'
+
     url = f"https://www.agriculture.com/search?search_api_views_fulltext={x}&sort_by=search_api_relevance&sort_by=search_api_relevance"
     browser.visit(url)
 
