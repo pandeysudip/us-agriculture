@@ -43,6 +43,11 @@ var baseMaps = {
 //marker
 var singleMarker = L.marker([37.09, -95.71], { draggable: true });
 
+// Getting our GeoJSON data
+var county = d3.json("us-county.geojson").then(function (data) {
+    // Creating a GeoJSON layer with the retrieved data
+    L.geoJson(data)//.addTo(myMap);
+});
 // Create an overlay object to hold our overlay.
 var overlayMaps = {
     "First Marker": singleMarker
