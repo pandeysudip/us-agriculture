@@ -132,14 +132,14 @@ def news_index():
 # Route that will trigger the scrape function
 
 
-@app.route("/news.html/scrape")
-def scrape():
+@app.route("/scraper")
+def news_scraper():
     # Run the scrape function
     news_datas = ag_news.scrape()
     # Update the Mongo database using update and upsert=True
     news.update({}, news_datas, upsert=True)
     # Redirect back to home page
-    return redirect("/")
+    return redirect("/news.html")
 
 
 if __name__ == "__main__":

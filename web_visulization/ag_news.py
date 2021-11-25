@@ -11,7 +11,7 @@ def scrape():
     browser = Browser('chrome', **executable_path, headless=True)
 
     # visit news page
-    x = 'Orange'
+    x = 'maze'
     url = f"https://www.agriculture.com/search?search_api_views_fulltext={x}&sort_by=search_api_relevance&sort_by=search_api_relevance"
     browser.visit(url)
 
@@ -47,7 +47,7 @@ def scrape():
 
     # get the data
 
-    image = soup_img.find_all('img')[1]["src"]
+    image = soup_img.find_all('img')[0]["src"]
 
     # store data in dictionary
 
