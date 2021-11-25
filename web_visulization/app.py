@@ -65,7 +65,7 @@ def field_crops_index():
     weather_list = list(weather.find())
     news_list = list(news.find())
 
-    # Return the template with the teams list passed in
+    # Return the template
     return render_template('crops_map.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
 
 
@@ -78,7 +78,7 @@ def fruits_index():
     weather_list = list(weather.find())
     news_list = list(news.find())
 
-    # Return the template with the teams list passed in
+    # Return the template
     return render_template('fruits_map.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
 
 
@@ -91,7 +91,7 @@ def vegetables_index():
     weather_list = list(weather.find())
     news_list = list(news.find())
 
-    # Return the template with the teams list passed in
+    # Return the template
     return render_template('vegetables_map.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
 
 
@@ -104,7 +104,7 @@ def weather_index():
     weather_list = list(weather.find())
     news_list = list(news.find())
 
-    # Return the template with the teams list passed in
+    # Return the template
     return render_template('weather.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
 
 
@@ -117,7 +117,7 @@ def data_index():
     weather_list = list(weather.find())
     news_list = list(news.find())
 
-    # Return the template with the teams list passed in
+    # Return the template
     return render_template('data.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
 
 
