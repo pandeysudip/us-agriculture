@@ -132,7 +132,7 @@ def news_index():
 # Route that will trigger the scrape function
 
 
-@app.route("/scrape")
+@app.route("/news.html/scrape")
 def scrape():
     # Run the scrape function
     news_datas = ag_news.scrape()
