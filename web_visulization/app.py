@@ -20,15 +20,8 @@ croplist = db['croplist']
 
 @app.route('/')
 def home():
-    # Store the entire collection as a list
-    crops_list = list(field_crops.find())
-    vegetable_list = list(vegetables.find())
-    fruits_list = list(fruits.find())
-    weather_list = list(weather.find())
-    news_list = list(news.find())
-
     # Return the template
-    return render_template('app_home.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('app_home.html')
 
 
 @app.route('/index.html')
