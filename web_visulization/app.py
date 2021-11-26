@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 from pymongo import MongoClient
 import ag_news
 
@@ -16,6 +16,19 @@ fruits = db['fruits']
 weather = db['weather']
 news = db['news']
 croplist = db['croplist']
+
+
+@app.route('/')
+def home():
+    # Store the entire collection as a list
+    crops_list = list(field_crops.find())
+    vegetable_list = list(vegetables.find())
+    fruits_list = list(fruits.find())
+    weather_list = list(weather.find())
+    news_list = list(news.find())
+
+    # Return the template
+    return render_template('app_home.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
 
 
 @app.route('/index.html')
@@ -39,7 +52,6 @@ def dashboard_index():
     fruits_list = list(fruits.find())
     weather_list = list(weather.find())
     news_list = list(news.find())
-
     # Return the template
     return render_template('dashboard.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
 
@@ -60,7 +72,7 @@ def plots_index():
 @app.route('/crops_map.html')
 def field_crops_index():
     # Store the entire collection as a list
-    crops_list = list(field_crops.find())
+    crops_list = field_crops.find()
 
     # Return the template
     return render_template('crops_map.html', crops_list=crops_list)
