@@ -5,7 +5,7 @@ var myMap = L.map("map", {
 });
 // Define a markerSize() function that will give each city a different radius based on its population.
 function markerSize(value) {
-    return Math.sqrt(value) * 5;
+    return Math.sqrt(value) * 2;
 }
 
 // Add a tile layer.
@@ -24,7 +24,7 @@ d3.json('/data/crops').then((data) => {
             fillOpacity: 0.75,
             radius: markerSize(d.Value)
         })
-            .bindPopup(`<h1>${d.County},${d.State}</h1> <hr> <h3>Total sell:$ ${d.Value.toLocaleString()}</h3>`)
+            .bindPopup(`<h1>${d.County},${d.State}</h1> <hr> <h3> Max Temp:${d.Max_temp}C</h3> <hr> <h3>Total sell:$ ${d.Value.toLocaleString()}</h3>`)
             .addTo(myMap);
 
     }

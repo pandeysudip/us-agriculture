@@ -137,7 +137,7 @@ def news_scraper(name):
 @app.route("/data/crops")
 def get_crops():
     crops_list = list(field_crops.find(
-        {"Commodity": "CORN"}, {"_id": 0, "Lat": 1, "Lon": 1, "County": 1, "State": 1, "Value": 1}))
+        {"Commodity": "CORN"}, {"_id": 0, "Lat": 1, "Lon": 1, "Max_temp": 1, "County": 1, "State": 1, "Value": 1}))
     return json.dumps(crops_list, default=json_util.default)
 
 
