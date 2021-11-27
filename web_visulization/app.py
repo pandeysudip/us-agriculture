@@ -1,12 +1,15 @@
 from flask import Flask, render_template, redirect, jsonify
 from pymongo import MongoClient
 import ag_news
+import json
+from bson import json_util
+
 
 # Create an instance of Flask
 app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
-#mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
+# mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 client = MongoClient("mongodb://localhost:27017")
 db = client['us-agriculture']
 # creating collection
@@ -65,8 +68,8 @@ def plots_index():
 @app.route('/crops_map.html')
 def field_crops_index():
     # Store the entire collection as a list
-    crops_list = field_crops.find()
-
+    crop_list = list(field_crops.find())
+    crops_list = json.dumps(crop_list, default=json_util.default)
     # Return the template
     return render_template('crops_map.html', crops_list=crops_list)
 
@@ -129,6 +132,12 @@ def news_scraper(name):
     news.update({}, news_datas, upsert=True)
     # Redirect back to home page
     return redirect("/news.html")
+
+
+@app.route("/crops")
+def get_data():
+    crops_list = list(field_crops.find())
+    return json.dumps(crops_list, default=json_util.default)
 
 
 if __name__ == "__main__":
