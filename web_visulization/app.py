@@ -134,20 +134,20 @@ def news_scraper(name):
     return redirect("/news.html")
 
 
-@app.route("/crops")
-def get_data():
+@app.route("/data/crops")
+def get_crops():
     crops_list = list(field_crops.find())
     return json.dumps(crops_list, default=json_util.default)
 
 
-@app.route("/fruits")
-def get_data():
+@app.route("/data/fruits")
+def get_fruits():
     fruits_list = list(fruits.find())
     return json.dumps(fruits_list, default=json_util.default)
 
 
-@app.route("/vegetables")
-def get_data():
+@app.route("/data/vegetables")
+def get_vege():
     vegetables_list = list(vegetables.find())
     return json.dumps(vegetables_list, default=json_util.default)
 

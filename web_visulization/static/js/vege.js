@@ -1,3 +1,8 @@
+// loading data
+d3.json('/data/vegetables').then((data) => {
+    console.log(data)
+});
+
 // Create the tile layer that will be the background of our map.
 var streetmap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -44,10 +49,9 @@ var baseMaps = {
 var singleMarker = L.marker([37.09, -95.71], { draggable: true });
 
 // Getting our GeoJSON data
-var county = d3.json("us-county.geojson").then(function (data) {
-    // Creating a GeoJSON layer with the retrieved data
-    L.geoJson(data)//.addTo(myMap);
-});
+//var county = d3.json("us-county.geojson").then(function (data) {
+// Creating a GeoJSON layer with the retrieved data
+//L.geoJson(data)//.addTo(myMap)});
 // Create an overlay object to hold our overlay.
 var overlayMaps = {
     "First Marker": singleMarker
