@@ -3,6 +3,10 @@ var myMap = L.map("map", {
     center: [37.09, -95.71],
     zoom: 5
 });
+// Define a markerSize() function that will give each city a different radius based on its population.
+function markerSize(value) {
+    return Math.sqrt(value) * 5;
+}
 
 // Add a tile layer.
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -15,12 +19,12 @@ d3.json('/data/crops').then((data) => {
         var d = data[i]
         // Setting the marker 
         L.circle([d.Lat, d.Lon], {
-            color: "green",
+            color: "black",
             fillColor: "green",
             fillOpacity: 0.75,
-            radius: 100
+            radius: markerSize(d.Value)
         })
-            .bindPopup(`<h1>${d.County},${d.State}</h1> <hr> <h3>Total sell($): ${d.Value.toLocaleString()}</h3>`)
+            .bindPopup(`<h1>${d.County},${d.State}</h1> <hr> <h3>Total sell:$ ${d.Value.toLocaleString()}</h3>`)
             .addTo(myMap);
 
     }
