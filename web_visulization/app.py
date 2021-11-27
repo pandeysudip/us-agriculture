@@ -140,5 +140,17 @@ def get_data():
     return json.dumps(crops_list, default=json_util.default)
 
 
+@app.route("/fruits")
+def get_data():
+    fruits_list = list(fruits.find())
+    return json.dumps(fruits_list, default=json_util.default)
+
+
+@app.route("/vegetables")
+def get_data():
+    vegetables_list = list(vegetables.find())
+    return json.dumps(vegetables_list, default=json_util.default)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
