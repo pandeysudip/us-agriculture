@@ -1,7 +1,22 @@
 // loading data
+// Define arrays to hold corn.
+var cornMarkers = [];
 d3.json('/data/crops').then((data) => {
-    console.log(data)
+
+    for (var i = 0; i < 10; i++) {
+        // Setting the marker 
+        cornMarkers.push(
+            L.circle([data[i].Lat, data[i].Lon], {
+                stroke: false,
+                fillOpacity: 0.75,
+                color: "black",
+                fillColor: "red"
+            })
+        );
+
+    }
 });
+console.log(cornMarkers);
 
 // Create the tile layer that will be the background of our map.
 var streetmap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -45,21 +60,19 @@ var baseMaps = {
     "Google Street": googleStreets,
     "Google Sat": googleSat
 };
-//marker
-var singleMarker = L.marker([37.09, -95.71], { draggable: true });
-
-
+// Create  layer groups: 
+var corn = L.layerGroup(cornMarkers);
 
 // Create an overlay object to hold our overlay.
 var overlayMaps = {
-    "First Marker": singleMarker
+    "Crops Marker": corn
 };
 
 // Create our map, giving it the streetmap and earthquakes layers to display on load.
 var myMap = L.map("map", {
     center: [37.09, -95.71],
     zoom: 5,
-    layers: [googleStreets, singleMarker]
+    layers: [googleStreets, corn]
 });
 
 // Add the layer control to the map.

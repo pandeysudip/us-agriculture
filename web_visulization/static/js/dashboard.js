@@ -15,14 +15,13 @@ function init() {
     var initType = agType[0]
     graphs(initType);
 
-    d3.json("weather.json").then((data) => {
+    d3.json('/data/fruits').then((data) => {
         //select the dropdown.
         var menu = d3.select("#selDataset");
-        var allStates = data.State;
         //var uniqueState = states.filter(onlyUnique);
         var states = []
         for (let i = 0; i < 3000; i++) {
-            s = allStates[i]
+            s = data[i].State
             states.push(s);
         }
         //states.filter(onlyUnique)
