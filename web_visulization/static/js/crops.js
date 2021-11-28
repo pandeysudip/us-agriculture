@@ -59,7 +59,7 @@ function createMap(commodity) {
 
                 // Setting the marker 
                 L.circle([d.Lat, d.Lon], {
-                    color: "black",
+                    color: "red",
                     fillColor: "green",
                     fillOpacity: 0.75,
                     radius: markerSize(d.Value)

@@ -152,5 +152,11 @@ def get_vege():
     return json.dumps(vegetables_list, default=json_util.default)
 
 
+@app.route("/data/weather")
+def get_weather():
+    weather_list = list(weather.find())
+    return json.dumps(weather_list, default=json_util.default)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

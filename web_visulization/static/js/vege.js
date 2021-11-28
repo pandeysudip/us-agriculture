@@ -26,6 +26,11 @@ function init() {
 };
 
 function createMap(commodity) {
+    //removing map if already exist
+    var container = L.DomUtil.get('map');
+    if (container != null) {
+        container._leaflet_id = null;
+    }
     // Create a map object.
     var myMap = L.map("map", {
         center: [37.09, -95.71],
@@ -48,12 +53,11 @@ function createMap(commodity) {
             //console.log(d);
 
             if (d.Commodity == commodity) {
-                console.log(d.Lat);
                 console.log(d.Commodity)
 
                 // Setting the marker 
                 L.circle([d.Lat, d.Lon], {
-                    color: "black",
+                    color: "green",
                     fillColor: "yellow",
                     fillOpacity: 0.75,
                     radius: markerSize(d.Value)

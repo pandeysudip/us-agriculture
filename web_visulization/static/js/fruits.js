@@ -52,7 +52,6 @@ function createMap(commodity) {
             //console.log(d);
 
             if (d.Commodity == commodity) {
-                console.log(d.Lat);
                 console.log(d.Commodity)
 
                 // Setting the marker 
