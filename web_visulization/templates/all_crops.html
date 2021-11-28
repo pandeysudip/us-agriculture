@@ -34,7 +34,7 @@
         <nav class="navbar navbar-expand-lg bg-black navbar-dark fixed-top">
             <div class="container">
                 <li role="presentation" class="active">
-                    <a href="index.html" class="navbar-brand bg-success px-5"> US Agriculture</a>
+                    <a href="index.html" class="navbar-brand bg-success px-5"> US Agriculture Home</a>
                 </li>
                 
             </div>
@@ -61,6 +61,10 @@
                                     <a role="presentation" class="dropdown-item lead text-success bg-black" href="all_crops.html">All Agriculture</a>
                                 </div>
                             </div>  
+                        </li>
+                        <li>
+                            <h6 class="text-danger">Choose Agriculture Type:</h6>
+                            <select id="selDataset" onchange="optionChange(this.value)"></select>
                         </li>
                         <li role="presentation" class="nav-item" >
                             <a href="dashboard.html" class="nav-link lead text-primary">Dashboard</a>

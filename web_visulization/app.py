@@ -171,6 +171,12 @@ def get_weather():
     return json.dumps(weather_list, default=json_util.default)
 
 
+@app.route("/data/croplist")
+def get_croplist():
+    clist = list(croplist.find())
+    return json.dumps(clist, default=json_util.default)
+
+
 @app.route("/data/all_crops")
 def get_all():
     crops_list = list(field_crops.find())
