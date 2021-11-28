@@ -112,6 +112,19 @@ def data_index():
     return render_template('data.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
 
 
+@app.route('/all_crops.html')
+def all_index():
+    # Store the entire collection as a list
+    crops_list = list(field_crops.find())
+    vegetable_list = list(vegetables.find())
+    fruits_list = list(fruits.find())
+    weather_list = list(weather.find())
+    news_list = list(news.find())
+
+    # Return the template
+    return render_template('all_crops.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+
+
 @app.route('/news.html')
 def news_index():
     # Find one record of data from the mongo database
@@ -156,6 +169,15 @@ def get_vege():
 def get_weather():
     weather_list = list(weather.find())
     return json.dumps(weather_list, default=json_util.default)
+
+
+@app.route("/data/all_crops")
+def get_all():
+    crops_list = list(field_crops.find())
+    vegetable_list = list(vegetables.find())
+    fruits_list = list(fruits.find())
+    all_list = crops_list+vegetable_list+fruits_list
+    return json.dumps(all_list, default=json_util.default)
 
 
 if __name__ == "__main__":
