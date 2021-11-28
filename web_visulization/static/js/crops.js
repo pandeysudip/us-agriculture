@@ -19,7 +19,8 @@ function init() {
             menu.append("option").text(crop).property("value", crop);
         });
         //creating function for initial plots 
-        var initSample = data.uniqueCrops
+        var initSample = uniqueCrops[0]
+        console.log(initSample)
         createMap(initSample);
     })
 };
@@ -43,19 +44,21 @@ function createMap(commodity) {
     d3.json('/data/crops').then((data) => {
 
         for (var i = 0; i < data.length; i++) {
-            if (data[i].Commodity == commodity) {
-                var d = data[i]
+            var d = data[i]
+            //console.log(d);
+
+            if (d.Commodity == commodity) {
+                console.log(d.Lat);
+                console.log(d.Commodity)
+
                 // Setting the marker 
                 L.circle([d.Lat, d.Lon], {
                     color: "black",
                     fillColor: "green",
                     fillOpacity: 0.75,
                     radius: markerSize(d.Value)
-                })
-                    .bindPopup(`<h1>${d.County},${d.State}</h1> <hr> <h3> Max Temp:${d.Max_temp}C</h3> <hr> <h3>Total sell:$ ${d.Value.toLocaleString()}</h3>`)
+                }).bindPopup(`<h1>${d.County},${d.State}</h1>  <hr> <h3>Total sell:$ ${d.Value.toLocaleString()}</h3>`)
                     .addTo(myMap);
-
-
             }
 
         }
