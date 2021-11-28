@@ -26,6 +26,12 @@ function init() {
 };
 
 function createMap(commodity) {
+    //removing map if already exist
+    var container = L.DomUtil.get('map');
+    if (container != null) {
+        container._leaflet_id = null;
+    }
+
     // Create a map object.
     var myMap = L.map("map", {
         center: [37.09, -95.71],
@@ -66,7 +72,7 @@ function createMap(commodity) {
 
 };
 
-function optionChanged(newSample) {
+function optionChange(newSample) {
     createMap(newSample);
 };
 
