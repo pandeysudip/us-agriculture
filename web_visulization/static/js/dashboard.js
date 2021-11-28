@@ -15,7 +15,7 @@ function init() {
     var initType = agType[0]
     graphs(initType);
 
-    d3.json('/data/fruits').then((data) => {
+    d3.json('/data/vegetables').then((data) => {
         //select the dropdown.
         var menu = d3.select("#selDataset");
         //var uniqueState = states.filter(onlyUnique);

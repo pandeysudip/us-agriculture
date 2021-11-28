@@ -63,6 +63,13 @@
                             </div>  
                         </li>
                         <li role="presentation" class="nav-item" >
+                            <div>
+                                <p class="text-danger">Choose crops type:</p>
+                                <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                            </div>
+                            
+                        </li>
+                        <li role="presentation" class="nav-item" >
                             <a href="dashboard.html" class="nav-link lead text-primary">Dashboard</a>
                         </li>
                         <li role="presentation" class="nav-item" >
@@ -78,6 +85,7 @@
               </div>
             </div>
         </nav>
+        
         <!-- The div where we'll insert our map -->
         <div id="map"></div>
 

@@ -1,70 +1,70 @@
-// loading data
-d3.json('/data/fruits').then((data) => {
-    console.log(data)
-});
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
 
-// Create the tile layer that will be the background of our map.
-var streetmap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-});
-// water color 
-var watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    subdomains: 'abcd',
-    minZoom: 1,
-    maxZoom: 16,
-    ext: 'jpg'
-});
-
-// dark map 
-var dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-});
-
-// google street 
-googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-    maxZoom: 20,
-    subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-});
-
-//google satellite
-googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-    maxZoom: 20,
-    subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-});
-
-// Create a baseMaps object to hold the streetmap layer.
-var baseMaps = {
-    "Street Map0": streetmap,
-    "Street Map1": streetmap,
-    "Street Map": streetmap,
-    "Water Color": watercolor,
-    "Dark": dark,
-    "Google Street": googleStreets,
-    "Google Sat": googleSat
-};
-//marker
-var singleMarker = L.marker([37.09, -95.71], { draggable: true });
-
-
-
-// Create an overlay object to hold our overlay.
-var overlayMaps = {
-    "First Marker": singleMarker
+//function for dropdown menu and initial graphs 
+function init() {
+    d3.json('/data/fruits').then((data) => {
+        //select the dropdown.
+        var menu = d3.select("#selDataset");
+        //var uniqueState = states.filter(onlyUnique);
+        var crops = []
+        for (let i = 0; i < 3000; i++) {
+            c = data[i].Commodity
+            crops.push(c);
+        }
+        //states.filter(onlyUnique)
+        var uniqueCrops = crops.filter(onlyUnique)
+        uniqueCrops.forEach((crop) => {
+            menu.append("option").text(crop).property("value", crop);
+        });
+        //creating function for initial plots 
+        var initSample = data.uniqueCrops
+        createMap(initSample);
+    })
 };
 
-// Create our map, giving it the streetmap and earthquakes layers to display on load.
-var myMap = L.map("map", {
-    center: [37.09, -95.71],
-    zoom: 5,
-    layers: [googleStreets, singleMarker]
-});
+function createMap(commodity) {
+    // Create a map object.
+    var myMap = L.map("map", {
+        center: [37.09, -95.71],
+        zoom: 5
+    });
+    // Define a markerSize() function that will give each city a different radius based on its population.
+    function markerSize(value) {
+        return Math.sqrt(value) * 2;
+    }
 
-// Add the layer control to the map.
-L.control.layers(baseMaps, overlayMaps, {
-    collapsed: false
-}).addTo(myMap);
+    // Add a tile layer.
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(myMap);
+
+    d3.json('/data/crops').then((data) => {
+
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].Commodity == commodity) {
+                var d = data[i]
+                // Setting the marker 
+                L.circle([d.Lat, d.Lon], {
+                    color: "black",
+                    fillColor: "green",
+                    fillOpacity: 0.75,
+                    radius: markerSize(d.Value)
+                })
+                    .bindPopup(`<h1>${d.County},${d.State}</h1> <hr> <h3> Max Temp:${d.Max_temp}C</h3> <hr> <h3>Total sell:$ ${d.Value.toLocaleString()}</h3>`)
+                    .addTo(myMap);
 
 
+            }
+
+        }
+    });
+
+};
+
+function optionChanged(newSample) {
+    createMap(newSample);
+};
+
+init();
