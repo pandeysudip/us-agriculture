@@ -177,6 +177,22 @@ def get_croplist():
     return json.dumps(clist, default=json_util.default)
 
 
+@app.route("/data/news")
+def get_news():
+    nlist = list(news.find())
+    return json.dumps(nlist, default=json_util.default)
+
+
+@app.route("/data/scraper/<name>")
+def news_scrape(name):
+    # Run the scrape function
+    news_datas = ag_news.scrape(name)
+    # Update the Mongo database using update and upsert=True
+    news.update({}, news_datas, upsert=True)
+    # Redirect back to home page
+    return redirect("/data/news")
+
+
 @app.route("/data/all_crops")
 def get_all():
     crops_list = list(field_crops.find())
