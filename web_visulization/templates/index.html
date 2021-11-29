@@ -61,13 +61,15 @@
                             <a href="dashboard.html" class="nav-link lead text-primary">Dashboard</a>
                         </li>
                         <li role="presentation" class="nav-item" >
-                            <a href="news.html" class="nav-link lead text-primary">News</a>
-                        </li>
-                        <li role="presentation" class="nav-item" >
                             <a href="plots.html" class="nav-link lead text-primary">Plots</a>
                         </li>
+                        
                         <li class="nav-item">
                             <a href="data.html" class="nav-link lead text-primary">Data</a>
+                        </li>
+                        
+                        <li role="presentation" class="nav-item" >
+                            <a href="news.html" class="nav-link lead text-primary">News</a>
                         </li>
                         <li class="nav-item">
                             <a href="weather.html" class="nav-link lead text-primary">Weather</a>
@@ -102,7 +104,7 @@
                         
                             <div class="d-md-flex ">
                                 <div class="container-fluid bg-black text-center">
-                                    <h5 class="text-white p-3">News Image</h5>
+                                    <h6 class="text-white p-3">News Image</h6>
                                     <div id="sample-metadata-img"></div>
                                 </div>
                                 
@@ -119,13 +121,28 @@
                                 <select id="selDataset" onchange="optionChanged(this.value)"></select>
                             </div>
                         </div>
-                        <h6 class=" p-3 text-info text-center">Maps</h6>
-                        <!-- The div where we'll insert our map -->
-                        <div id="map"></div>
+                        <div class="d-md-flex ">
+                            <div class="container-fluid bg-secondary text-center">
+                                <h6 class="text-white p-3">Picture</h6>
+                                <div id="sample-metadata-pic"></div>
+                            </div>
+                            
+                        </div>
+                        <div class="d-md-flex ">
+                            <div class="container-fluid bg-black text-center">
+                                <h6 class="text-white p-3">Maps</h6>
+                                <div id="map1"></div>
+                            </div>
+                            
+                        </div>
+              
                     </div>
                 </div> 
             </div>
         </section>
+        <footer>
+            <p>Copyright &copy; Project3Group4</p>
+        </footer>
 
 
         <!-- JavaScript file -->

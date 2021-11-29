@@ -13,7 +13,9 @@ html {
 #map{
   height: 100%;
 }
-
+#map1{
+  height: 1000%;
+}
 
 /* for id # and for class.*/
 /* no need to nested inside but easier to read*/

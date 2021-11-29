@@ -19,13 +19,13 @@ function init() {
 
 function createMap(commodity) {
     //removing map if already exist
-    var container = L.DomUtil.get('map');
+    var container = L.DomUtil.get('map1');
     if (container != null) {
         container._leaflet_id = null;
     }
 
     // Create a map object.
-    var myMap = L.map("map", {
+    var myMap = L.map("map1", {
         center: [37.09, -95.71],
         zoom: 4
     });
@@ -79,16 +79,27 @@ function graphs(commodity) {
         initTable.append("p").text(`${parg}`);
 
         //news-img
+        var initimg = d3.select("#sample-metadata-img");
+        initimg.html("");
 
-        var news_image = data[0].news_image_url
-        console.log(news_image)
 
-        var initImg = d3.select("#sample-metadata-img");
-        initImg.html("")
+        var url = data[0].news_image_url;
 
-        initImg.append("svg").attr(`${news_image}`)
-            .attr("width", "20")
-            .attr("height", "40");
+        console.log(url)
+        var image = new Image();
+        image.src = url + ".png";
+
+        document.getElementById('sample-metadata-img').appendChild(image);
+
+        var initpic = d3.select("#sample-metadata-pic");
+        initpic.html("");
+
+        var url2 = data[0].image;
+        console.log(url2)
+
+        var image2 = new Image();
+        image2.src = url2;
+        document.getElementById('sample-metadata-pic').appendChild(image2);
 
     });
 };

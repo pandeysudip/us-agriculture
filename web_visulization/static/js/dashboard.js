@@ -140,8 +140,8 @@ function createpie(dataselected) {
     let Piechartdata = dataselected.filter(selectdata);
     Piechartdata.sort(function (b, a) { return a.Value - b.Value; })
     console.log(Piechartdata);
-    Sales = [];
-    Counties = [];
+    var Sales = [];
+    var Counties = [];
     for (var i = 0; i < Piechartdata.length; i++) {
         // Setting the marker radius for the state by passing population into the markerSize function
         Sales.push(Piechartdata[i].Value)
@@ -166,7 +166,7 @@ function createpie(dataselected) {
     Plotly.newPlot("pie", data, layout);
 
     var pietitle = d3.select("#PieTitle");
-    d3.select("#PieTitle").selectAll("h1").remove();
+    d3.select("#PieTitle").selectAll("h3").remove();
     pietitle.append("h3").text("Top 10 Counties With Most Sales in " + stateoption);
     console.log(sales2)
     console.log(counties2)
@@ -206,7 +206,7 @@ function createpie(dataselected) {
         title: cropoption,
         showlegend: false,
         height: 600,
-        width: 1850
+        width: 1870
     };
 
     Plotly.newPlot('bubble', bubbledata, blayout);
@@ -285,17 +285,19 @@ function GraphsInfo() {
             acumulator = Filterstate[i].Value + acumulator;
             cont = cont + 1;
         }
+        acumulator = acumulator.toFixed(2);
 
         length2 = Filterstate.lenght;
         var mean = (acumulator / cont);
+        mean = mean.toFixed(2);
         console.log(Filterstate.length)
         console.log(mean)
         console.log(acumulator)
-        d3.select("#panel").selectAll("p").remove();
+        d3.select("#panel").selectAll("h3").remove();
         var panel = d3.select("#panel");
-        panel.append("p").text("Counties:" + cont);
-        panel.append("p").text("Total Sales per State:" + acumulator);
-        panel.append("p").text("Average per County:" + mean);
+        panel.append("h3").text("Number of Counties:" + cont);
+        panel.append("h3").text("Total Sales per State:" + "$" + acumulator);
+        panel.append("h3").text("Average Sales per County:" + "$" + mean);
         createpie(fielddata);
     }
 
@@ -308,18 +310,19 @@ function GraphsInfo() {
             acumulator = Filterstate[i].Value + acumulator;
             cont = cont + 1;
         }
+        acumulator = acumulator.toFixed(2);
 
         length2 = Filterstate.lenght;
         var mean = (acumulator / cont);
+        mean = mean.toFixed(2);
         console.log(Filterstate.length)
         console.log(mean)
         console.log(acumulator)
-        d3.select("#panel").selectAll("p").remove();
+        d3.select("#panel").selectAll("h3").remove();
         var panel = d3.select("#panel");
-        panel.append("p").text("Counties:" + cont);
-        panel.append("p").text("Total Sales per State:" + acumulator);
-        panel.append("p").text("Average per County:" + mean);
-        console.log('here')
+        panel.append("h3").text("Number of Counties:" + cont);
+        panel.append("h3").text("Total Sales per State:" + "$" + acumulator);
+        panel.append("h3").text("Average Sales per County:" + "$" + mean);
         createpie(fruitsdata)
     }
 
@@ -333,17 +336,19 @@ function GraphsInfo() {
             cont = cont + 1;
         }
 
+        acumulator = acumulator.toFixed(2);
+
         length2 = Filterstate.lenght;
         var mean = (acumulator / cont);
+        mean = mean.toFixed(2);
         console.log(Filterstate.length)
         console.log(mean)
         console.log(acumulator)
-        d3.select("#panel").selectAll("p").remove();
+        d3.select("#panel").selectAll("h3").remove();
         var panel = d3.select("#panel");
-        panel.append("p").text("Counties:" + cont);
-        panel.append("p").text("Total Sales per State:" + acumulator);
-        panel.append("p").text("Average per County:" + mean);
-        console.log('here2')
+        panel.append("h3").text("Number of Counties:" + cont);
+        panel.append("h3").text("Total Sales per State:" + "$" + acumulator);
+        panel.append("h3").text("Average Sales per County:" + "$" + mean);
         createpie(vegetablesdata)
     }
 

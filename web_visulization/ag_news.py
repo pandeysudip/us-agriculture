@@ -47,7 +47,7 @@ def scrape(x):
 
     # get the data
 
-    image = soup_img.find_all('img')[0]["src"]
+    image = soup_img.find_all('img')[2]["src"]
 
     # store data in dictionary
 
