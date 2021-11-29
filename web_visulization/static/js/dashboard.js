@@ -206,7 +206,7 @@ function createpie(dataselected) {
         title: cropoption,
         showlegend: false,
         height: 600,
-        width: 1200
+        width: 1850
     };
 
     Plotly.newPlot('bubble', bubbledata, blayout);
