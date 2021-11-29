@@ -69,8 +69,8 @@ function graphs(commodity) {
         initTitle.append("h3").text(` Headlines for ${commodity}`);
         //select demographic table
         var initTable = d3.select("#sample-metadata");
-        title = data[0].news_title
-        parg = data[0].news_p
+        var title = data[0].news_title
+        var parg = data[0].news_p
 
         //clearing table data
         initTable.html("");
@@ -79,14 +79,16 @@ function graphs(commodity) {
         initTable.append("p").text(`${parg}`);
 
         //news-img
+
+        var news_image = data[0].news_image_url
+        console.log(news_image)
+
         var initImg = d3.select("#sample-metadata-img");
+        initImg.html("")
 
-        img = data[0].news_image_url
-
-        //clearing 
-        initImg.html("");
-
-        initImg.append("img").src(`${img}`);
+        initImg.append("svg").attr(`${news_image}`)
+            .attr("width", "20")
+            .attr("height", "40");
 
     });
 };
