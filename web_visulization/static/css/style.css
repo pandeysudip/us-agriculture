@@ -1,0 +1,36 @@
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+
+/* Set body, and html to 100% of the screen size. */
+body,
+html {
+  height: 100%;
+}
+#map{
+  height: 90%;
+}
+
+
+/* for id # and for class.*/
+/* no need to nested inside but easier to read*/
+
+
+a {
+  color: blue;
+}
+#temp{
+  border: 1em solid;
+}
+
+footer {
+  margin: 0em;
+  padding: 1.2em;
+  background: #0d0e0d;
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+}
