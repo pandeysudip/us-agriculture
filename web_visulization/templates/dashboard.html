@@ -84,14 +84,14 @@
 
 
         <div class="row">
-            <div class="col-md-3 ">
+            <div class="col-md-2 ">
                 <div class="card bg-danger text-white p-5">
                     <div class="well ">
                     <h2 class="text-white">State Name:</h2>
                     <select id="selDataset1" onchange="optionChanged1(this.value)"></select>
                     </div>
                 </div>
-                <div class="card bg-info text-light p-5">
+                <div class="card bg-secondary text-light p-5">
                     <div class="well ">
                     <h2 class="text-danger">Crop Type:</h2>
                     <select id="selDataset2" onchange="optionChanged2(this.value)"></select>
@@ -112,11 +112,11 @@
                 </div>
             </div>
 
-            <div class="col-md-3 bg-warning">
+            <div class="col-md-2 bg-warning">
             <div class="text-center">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                      <h3 class="panel-title">Total Sales per State</h3>
+                      <h3 class="panel-title text-info">Total Sales Per State</h3>
                     </div>
                     <div id="panel" class="panel-body">
                         
@@ -124,29 +124,41 @@
                 </div>
             </div>
             </div>
-            <div class="col-md-6 bg-info">
+            <div class="col-md-4 bg-info">
                 <div id = "PieTitle"></div>
                 
                 <div id="pie"></div>
             </div>
+
+            <div class="col-md-4 bg-warning">
+                <div id = "other chart"></div>
+                
+                <div id="other chart"></div>
+            </div>
             
         <div class="row">
-            <div class="col-md-12 bg-danger">
+            <div class="col-md-8 bg-secondary">
             <div class="text-center">
-                <h3 class="text-white "> All Counties of the State selected</h3>
+                <h3 class="text-white text-center  "> All Counties of the State Selected</h3>
             </div>
             <div id="bubble"></div>
             <div class="text-center">
                 <h6 class="text-white "></h6>
             </div>
             </div>
+
+            <div class="col-md-4 bg-black">
+                <div id = "other chart"></div>
+                
+                <div id="other chart"></div>
+            </div>
         </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12 bg-danger">
+            <div class="col-md-12 bg-black">
             <div class="text-center">
-                <h3 class="text-white "> Comparison of Crop selected within USA</h3>
+                <h3 class="text-white "> Comparison of Crop Selected Within USA</h3>
             </div>
             <div id="bar"></div>
             <div class="text-center">

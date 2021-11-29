@@ -167,7 +167,7 @@ function createpie(dataselected) {
 
     var pietitle = d3.select("#PieTitle");
     d3.select("#PieTitle").selectAll("h1").remove();
-    pietitle.append("h1").text("Top 10 Counties with most Sales in " + stateoption);
+    pietitle.append("h3").text("Top 10 Counties With Most Sales in " + stateoption);
     console.log(sales2)
     console.log(counties2)
     var Msize = 2;
