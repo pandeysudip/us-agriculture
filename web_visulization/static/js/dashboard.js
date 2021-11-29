@@ -159,8 +159,8 @@ function createpie(dataselected) {
 
     var layout = {
         title: cropoption,
-        height: 500,
-        width: 500
+        height: 600,
+        width: 900
     };
 
     Plotly.newPlot("pie", data, layout);
