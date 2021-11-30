@@ -59,6 +59,7 @@ function createMap(commodity) {
 
         }
     });
+
 }
 
 function graphs(commodity) {

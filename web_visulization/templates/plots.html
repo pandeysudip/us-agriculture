@@ -17,6 +17,11 @@
           integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
           crossorigin=""></script>
 
+        <!-- D3 library -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
         <!-- Our CSS -->
         <link rel="stylesheet" type="text/css" href="static/css/style.css">
   </head>
@@ -73,89 +78,61 @@
               </div>
             </div>
         </nav>
-        <!--body-->
-        <section id="tal" class="bg-muted text-dark p-5 mt-5 text-center text-sm-start">
-            <div class="container">
-                <div class="d-sm-flex">
-                    <div class="container">
-                        <h1 class=" p-3 text-success text-center">Scatter Plots</h1>
-                        <img class="img-fluid  " src="" alt="picture" />
-
-                        <div id="plot"></div>
-                        
-                        <div>
-                            <p>
-                                There i
-                            </p>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <h1 class=" p-3 text-info text-center">Visulizations</h1>
-                        <div class="d-sm-flex">
-                            <div class="column text-center">
-                                <div class="col-md">
-                                    <div class="card-body text-center">
-                                        <h6 class="card-title mb-3 text-danger">
-                                             
-                                        </h6>
-                                        <div class="card-image">
-                                            <a href="temp.html">
-                                                <img class="img-fluid  " src="" alt="picture" />
-                                            </a>
-                    
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md">
-                                    <div class="card-body text-center">
-
-                                        <h6 class="card-title mb-3 text-danger">
-                                            
-                                        </h6>
-                                        <div class="card-image">
-                                            <a href="humidity.html">
-                                                <img id="temp" class="img-fluid   border-dark" src="" alt="picture" />
-                                            </a>
-                                            
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div>
-                            <div class="column text-center">
-                                <div class="col-md">
-                                    <div class="card-body text-center">
-
-                                            <h6 class="card-title mb-3 text-danger">
-                                                
-                                            </h6>
-                                            <div class="card-image">
-                                                <a href="cloudness.html">
-                                                    <img class="img-fluid  " src="" alt="picture" />
-                                                </a> 
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="col-md">
-                                    <div class="card-body text-center ">
-
-                                    <h6 class="card-title mb-3 text-danger">
-                                        
-                                    </h6>
-                                    <div class="card-image">
-                                        <a href="windspeed.html">
-                                            <img class="img-fluid  " src="" alt=" picture" />
-
-                                        </a>
-                                    </div>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div> 
+        <h1>Space</h1>
+        <div class="row">
+            <div class="col-md-12 bg-danger">
+            <div class="text-center">
+                
+                <h3 class="text-white "> All USA crops Sales by State</h3>
+                <div id="usasales"></div>
+                
             </div>
-        </section>
+            <div id="bar"></div>
+            <div class="text-center">
+                <h6 class="text-white "></h6>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 bg-danger">
+            <div class="text-center">
+                <h3 class="text-white "> USA Counties Field Crops Sales</h3>
+                <div id="fieldsales"></div>
+            </div>
+            <div id="fieldplot"></div>
+            <div class="text-center">
+                <h6 class="text-white "></h6>
+            </div>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-md-12 bg-danger">
+            <div class="text-center">
+                <h3 class="text-white "> USA Counties Fruits Sales</h3>
+                <div id="fruitsales"></div>
+            </div>
+            <div id="fruitplot"></div>
+            <div class="text-center">
+                <h6 class="text-white "></h6>
+            </div>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-md-12 bg-danger">
+            <div class="text-center">
+                <h3 class="text-white "> USA Counties Vegetables Sales</h3>
+                <div id="vegsales"></div>
+            </div>
+            <div id="vegieplot"></div>
+            <div class="text-center">
+                <h6 class="text-white "></h6>
+            </div>
+            </div>
+           
+        </div>
+          
         <!-- JavaScript file -->
         <script type="text/javascript" src="static/js/plots.js"></script>
 
@@ -169,4 +146,3 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
-
