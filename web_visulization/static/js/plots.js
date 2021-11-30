@@ -120,7 +120,7 @@ function CreatescatterchartsF(countyfruits, valuefruits, totalfruits) {
     Plotly.newPlot('fruitplot', data);
     d3.select("#fruitsales").selectAll("h4").remove();
     var menu = d3.select("#fruitsales");
-    menu.append("h4").text("Total Fruit sales:" + Number(totalfruits).toLocaleString())
+    menu.append("h4").text("Total Fruit sales:" + " $" + Number(totalfruits).toLocaleString())
 }
 
 
@@ -140,7 +140,7 @@ function CreatescatterchartsFi(countyfield, valuefield, totalfields) {
     Plotly.newPlot('fieldplot', data);
     d3.select("#fieldsales").selectAll("h4").remove();
     var menu = d3.select("#fieldsales");
-    menu.append("h4").text("Total Field Crops sales:" + Number(totalfields).toLocaleString())
+    menu.append("h4").text("Total Field Crops sales:" + " $" + Number(totalfields).toLocaleString())
 
 }
 
@@ -160,7 +160,7 @@ function CreatescatterchartsV(countyvegie, valuevegie, totalvegies) {
     Plotly.newPlot('vegieplot', data);
     d3.select("#vegsales").selectAll("h4").remove();
     var menu = d3.select("#vegsales");
-    menu.append("h4").text("Total Vegetable sales:" + Number(totalvegies).toLocaleString())
+    menu.append("h4").text("Total Vegetable sales:" + " $" + Number(totalvegies).toLocaleString())
 }
 
 
@@ -194,7 +194,7 @@ function Createbarchart(xstate, yfield, yvegie, yfruit, totalusa) {
 
     d3.select("#usasales").selectAll("h4").remove();
     var menu = d3.select("#usasales");
-    menu.append("h4").text('Total sales USA:' + Number(totalusa).toLocaleString())
+    menu.append("h4").text('Total sales USA:' + " $" + Number(totalusa).toLocaleString())
 }
 
 
