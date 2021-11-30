@@ -110,7 +110,9 @@ function CreatescatterchartsF(countyfruits, valuefruits, totalfruits) {
         x: countyfruits,
         y: valuefruits,
         mode: 'markers',
-        type: 'scatter'
+        type: 'scatter',
+        color: 'grey',
+        marker: { size: 12 }
 
     };
 
@@ -130,7 +132,9 @@ function CreatescatterchartsFi(countyfield, valuefield, totalfields) {
         x: countyfield,
         y: valuefield,
         mode: 'markers',
-        type: 'scatter'
+        type: 'scatter',
+        color: 'green',
+        marker: { size: 12 }
 
     };
 
@@ -150,7 +154,9 @@ function CreatescatterchartsV(countyvegie, valuevegie, totalvegies) {
         x: countyvegie,
         y: valuevegie,
         mode: 'markers',
-        type: 'scatter'
+        type: 'scatter',
+        color: 'red',
+        marker: { size: 12 }
 
     };
 

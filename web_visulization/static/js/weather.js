@@ -21,8 +21,6 @@ d3.json('/data/weather').then((data) => {
             color: "red",
             fillColor: "red",
             fillOpacity: 0.75,
-
-
         })
             .bindPopup(`<h4>${d.County},${d.State}</h4> <hr> <p> Max Temp:${d.Max_temp}C</p> <hr> <p> Min Temp:${d.Min_temp}C</p><hr> <p> Description:${d.Description}</p> <hr> <p> Feels like:${d.Feels_like}</p>`)
             .addTo(myMap);
