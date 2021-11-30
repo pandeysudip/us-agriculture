@@ -65,6 +65,12 @@ def plots_index():
     return render_template('plots.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
 
 
+@app.route('/contact.html')
+def contact():
+    # Return the template
+    return render_template('contact.html')
+
+
 @app.route('/crops_map.html')
 def field_crops_index():
     # Store the entire collection as a list
