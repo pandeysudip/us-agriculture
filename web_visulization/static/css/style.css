@@ -28,6 +28,11 @@ a {
   border: 1em solid;
 }
 
+
+.contact-right iframe {
+  width: 800px;
+  height: 600px;
+}
 footer {
   margin: 0em;
   padding: 1.2em;
