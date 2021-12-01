@@ -19,6 +19,7 @@
         <!-- D3 library -->
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
         <!-- Our CSS -->
         <link rel="stylesheet" type="text/css" href="static/css/style.css">
@@ -52,7 +53,7 @@
                                     <a role="presentation" class="dropdown-item lead text-success bg-black" href="crops_map.html">Field_Crop</a>
                                     <a role="presentation" class="dropdown-item lead text-success bg-black" href="vegetables_map.html">Vegetables</a>
                                     <a role="presentation" class="dropdown-item lead text-success bg-black" href="fruits_map.html">Fruits</a>
-                                    <a role="presentation" class="dropdown-item lead text-success bg-black" href="weather.html">Weather</a>
+                                    <a role="presentation" class="dropdown-item lead text-success bg-black" href="all_crops.html">All Agriculture</a>
                                 </div>
                             </div>  
                         </li>
@@ -60,14 +61,21 @@
                         <li role="presentation" class="nav-item" >
                             <a href="dashboard.html" class="nav-link lead text-primary">Dashboard</a>
                         </li>
-                        <li role="presentation" class="nav-item" >
-                            <a href="news.html" class="nav-link lead text-primary">News</a>
-                        </li>
+                        
                         <li role="presentation" class="nav-item" >
                             <a href="plots.html" class="nav-link lead text-primary">Plots</a>
                         </li>
                         <li class="nav-item">
                             <a href="data.html" class="nav-link lead text-primary">Data</a>
+                        </li>
+                        <li role="presentation" class="nav-item" >
+                            <a href="news.html" class="nav-link lead bg-dark text-white">Agriculture News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="weather.html" class="nav-link lead text-primary">Weather</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link lead text-primary">Contact</a>
                         </li>
                     </ul>
               </div>
@@ -75,13 +83,14 @@
         </nav>
 
         <!--body-->
-        <div class="container">
         <div class="row">
-            <div class="col-md-12 jumbotron bg-dark text-light text-center mt-5 p-5">
+            <div class=" bg-dark text-light text-center mt-5 pt-5">
             <h1 class="text-info">US Agriculture Dashboard</h1>
             <p class="text-warning">Use the interactive charts below to explore the dataset</p>
             </div>
         </div>
+
+
         <div class="row">
             <div class="col-md-3 ">
                 <div class="card bg-danger text-white p-5">
@@ -90,7 +99,7 @@
                     <select id="selDataset1" onchange="optionChanged1(this.value)"></select>
                     </div>
                 </div>
-                <div class="card bg-info text-light p-5">
+                <div class="card bg-secondary text-light p-5">
                     <div class="well ">
                     <h2 class="text-danger">Crop Type:</h2>
                     <select id="selDataset2" onchange="optionChanged2(this.value)"></select>
@@ -115,7 +124,7 @@
             <div class="text-center">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                      <h3 class="panel-title">Total Sales per State</h3>
+                      <h3 class="panel-title text-info">Total Sales Per State</h3>
                     </div>
                     <div id="panel" class="panel-body">
                         
@@ -124,37 +133,40 @@
             </div>
             </div>
 
-            <div class="col-md-6 bg-info">
+            <div class="col-md-6 bg-white">
                 <div id = "PieTitle"></div>
                 
                 <div id="pie"></div>
             </div>
-            
+
+        </div>
             
         <div class="row">
-            <div class="col-md-12 bg-danger">
+            <div class="col-md-12 bg-secondary">
             <div class="text-center">
-                <h3 class="text-white "> All Counties of the State selected</h3>
+                <h3 class="text-white "> All Counties of the State Selected</h3>
             </div>
             <div id="bubble"></div>
             <div class="text-center">
                 <h6 class="text-white "></h6>
             </div>
             </div>
+
         </div>
-        </div>
+        
 
         <div class="row">
-            <div class="col-md-12 bg-danger">
+            <div class="col-md-12 bg-white">
             <div class="text-center">
-                <h3 class="text-white "> Comparison of Crop selected within USA</h3>
+                <h3 class="text-black "> Comparison of Crop Selected Within USA</h3>
             </div>
-            <div id="bar"></div>
+            <div id="bar">
+                <canvas id="bar1" ></canvas>
+           </div>
             <div class="text-center">
                 <h6 class="text-white "></h6>
             </div>
             </div>
-        </div>
         </div>
 
         <script src="https://d3js.org/d3.v5.min.js"></script>
