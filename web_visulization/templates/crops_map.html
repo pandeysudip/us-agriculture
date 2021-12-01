@@ -65,7 +65,7 @@
                       
                         <li>
                             <h6 class="text-danger">Choose Field Crops Type:</h6>
-                            <select id="selDataset" onchange="optionChange(this.value)"></select>
+                            <select id="selDataset" onchange="optionChanged(this.value)"></select>
                         </li>
                         
 
@@ -93,9 +93,14 @@
               </div>
             </div>
         </nav>
-        
+        <section id="tal" class="bg-dark text-light pt-4 mt-5 text-center text-sm-start">
+            <div class="container text-center">
+            </div>
+        </section> 
         <!-- The div where we'll insert our map -->
+ 
         <div id="map"></div>
+
 
         <!-- JavaScript file -->
         <script type="text/javascript" src="static/js/crops.js"></script>

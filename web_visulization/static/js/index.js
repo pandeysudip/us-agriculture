@@ -1,3 +1,4 @@
+
 //function for dropdown menu and initial graphs 
 function init() {
     d3.json('/data/croplist').then((data) => {
@@ -108,5 +109,4 @@ function optionChanged(newSample) {
     createMap(newSample);
     graphs(newSample)
 };
-
 init();
