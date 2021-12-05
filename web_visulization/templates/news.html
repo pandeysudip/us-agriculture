@@ -80,7 +80,7 @@
         </nav>
         
         <div class="container-fluid">
-            <div class="jumbotron text-center bg-dark text-light mt-5 pt-5">
+            <div class="jumbotron text-center bg-dark text-light mt-5 p-5">
                 <h1><span class="text-info">Agriculture News</span></h1>
             </div >
             <div class="jumbotron text-center bg-info text-light  p-5">
@@ -93,6 +93,15 @@
                 </select>
                 
             </div >
+            <div class="container-fluid bg-dark">
+                <div class="d-md-flex ">
+                    <div class="container-fluid bg-black text-center">
+                        
+                        <img src={{ mission_news.image}} alt="image">
+                    </div>
+                    
+                </div>
+            </div>
             <div class="bg-secondary text-center text-light  p-3">
                
                 
@@ -108,15 +117,7 @@
             
         </div>
     </div>
-    <div class="container-fluid bg-dark">
-        <div class="d-md-flex ">
-            <div class="container-fluid bg-black text-center">
-                
-                <img src={{ mission_news.image}} alt="image">
-            </div>
-            
-        </div>
-    </div>
+
 
     <script>
         function optionChanged(val){

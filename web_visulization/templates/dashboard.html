@@ -20,6 +20,9 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+        <!-- chart.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
         <!-- Our CSS -->
         <link rel="stylesheet" type="text/css" href="static/css/style.css">
   </head>
@@ -155,11 +158,14 @@
         
 
         <div class="row">
-            <div class="col-md-12 bg-black">
+            <div class="col-md-12 bg-white">
             <div class="text-center">
-                <h3 class="text-white "> Comparison of Crop Selected Within USA</h3>
+                <h3 class="text-black "> Comparison of Crop Selected Within USA</h3>
             </div>
-            <div id="bar"></div>
+            <div id="bar">
+                <!-- <canvas id="bar1" ></canvas>-->
+                 <canvas id="bar1" ></canvas>
+            </div>
             <div class="text-center">
                 <h6 class="text-white "></h6>
             </div>
@@ -168,7 +174,8 @@
 
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <script src="static/js/dashboard.js"></script>
+        <!--<script src="static/js/dashboard.js"></script>-->
+        <script src="static/js/dash_chart.js"></script>
         
         <footer>
             <p>Copyright &copy; Project3Group4</p>

@@ -11,7 +11,7 @@ function init() {
             menu.append("option").text(crop).property("value", crop);
         });
         //creating function for initial plots 
-        var initSample = uniqueCrops[1]
+        var initSample = uniqueCrops[9]
         console.log(initSample)
         createMap(initSample);
         graphs(initSample);
