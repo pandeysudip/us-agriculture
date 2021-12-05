@@ -19,7 +19,10 @@ html {
 
 /* for id # and for class.*/
 /* no need to nested inside but easier to read*/
+.chartBox{
+  width: 1400px;
 
+}
 
 a {
   color: blue;
