@@ -29,15 +29,15 @@ The website contained an overview description of the US agriculture, then an int
 
 
 ### A [maps page](#maps-page), that contain:
- * I Field crops type
+ #### * I Field crops type
   A descriptive information of field crops in the form of map for each county in US.
   ![final_app_part3.png](Images/web2.png)
 
-  * II Fruits type
+  #### * II Fruits type
   A descriptive information of fruits in the form of map for each county in US.
   ![final_app_part3.png](Images/web3.png)
 
-  * III Vegetables type
+  #### * III Vegetables type
   A descriptive information of vegetables in the form of map for each county in US.
   ![final_app_part3.png](Images/web4.png)
 
