@@ -28,7 +28,7 @@ The website contained an overview description of the US agriculture, then an int
   ![final_app_part1.png](Images/web1.png)
 
 
-#### A US agriculture maps page, that contain:
+### A US agriculture maps page, that contain:
  * I Field crops type
   A descriptive information of field crops in the form of map for each county in US.
   ![final_app_part3.png](Images/web2.png)
@@ -41,7 +41,7 @@ The website contained an overview description of the US agriculture, then an int
   A descriptive information of vegetables in the form of map for each county in US.
   ![final_app_part3.png](Images/web4.png)
 
-#### A ["Dashboard" page](#dashboard-page):
+### A ["Dashboard" page](#dashboard-page):
   Can select State name, Crop type and crop name which show
   * Total sales of the selected crop type.
   * Pie chart for the top 10 counties with the most sale for the selected state
@@ -50,29 +50,29 @@ The website contained an overview description of the US agriculture, then an int
   ![final_app_part4.png](Images/web5.png)
   ![final_app_part4.png](Images/web6.png)
 
-####  A ["Plots" page](#plotd-page) which show:
+###  A ["Plots" page](#plotd-page) which show:
   * All US crops sales by state in the form of bar chart.
   * Scatter plot of all US counties field crops sales.
   * Scatter plot of all US counties fruits sales.
   * Scatter plot of all US counties vegetables sales.
   ![final_app_part4.png](Images/web7.png)
 
-#### A ["News" page](#news-page):
+### A ["News" page](#news-page):
   * Can select the crop types from the dropdown menu
   * Scraped news and image of particular crops and display the information of the selected crop type
   ![final_app_part4.png](Images/web9.png)
 
-#### A ["Data" page](#data-page):
+### A ["Data" page](#data-page):
   Containing all the data information in the form of table.
   ![final_app_part10.png](Images/web8.png)
 
 
-* A ["Weather" page](#weather-page):
+### A ["Weather" page](#weather-page):
   Containing wether information for all US counties.
   ![final_app_part10.png](Images/web10.png)
 
 
-* A ["Contact" page](#contact-page):
+### A ["Contact" page](#contact-page):
   Containing all the contact information.
   ![final_app_part10.png](Images/web11.png)
 
