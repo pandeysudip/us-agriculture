@@ -20,7 +20,7 @@ The website contained an overview description of the US agriculture, then an int
 * HTML pages contained the visualizations and their corresponding explanations which are as:
 ![final_app_part0.png](Images/web00.png) 
 
-#### A [landing page](#landing-page) containing:
+### A [landing page](#landing-page) containing:
   * An explanation of the project with  information of using interactive web
   * Can select croptype to get the information of that crop
   * Scraped news and image of particular crops and display the information 
@@ -28,7 +28,7 @@ The website contained an overview description of the US agriculture, then an int
   ![final_app_part1.png](Images/web1.png)
 
 
-### A US agriculture maps page, that contain:
+### A [maps page](#maps-page), that contain:
  * I Field crops type
   A descriptive information of field crops in the form of map for each county in US.
   ![final_app_part3.png](Images/web2.png)
