@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 .DS_Store
+mongopass.py
+mongopass1.py
 #api keys
 api_keys.py
 # Distribution / packaging
