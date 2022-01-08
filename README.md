@@ -1,4 +1,6 @@
 # us-agriculture
+The website is deployed to Heroku at:  
+https://usa-agriculture.herokuapp.com/
 
 ## Background 
 Our aim is to help our audience visualize the U.S agricultural production over the year 2017. To achieve this, we developed an interactive map that contain various information about agricultural products across the country. The platform will help the viewer identify the diversity and intensity of the U.S agricultural output.
