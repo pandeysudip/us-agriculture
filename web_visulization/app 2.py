@@ -4,7 +4,7 @@ from flask_pymongo import PyMongo
 import ag_news
 import json
 from bson import json_util
-#from mongopass1 import user, passo
+from mongopass1 import user, passo
 import os
 
 
@@ -15,28 +15,24 @@ app = Flask(__name__)
 
 #client = MongoClient(f'mongodb+srv://{user}:{passo}@cluster.lymw3.mongodb.net/usag?retryWrites=true&w=majority')
 
-# "mongodb://localhost:27017/us-agriculture"
 
-app.config["MONGO_URI"] = os.environ.get('MONGODB_URI', '')
-# f'mongodb+srv://{user}:{passo}@cluster.lymw3.mongodb.net/usag?retryWrites=true&w=majority'
-app.config['MONG_DBNAME'] = 'usag'
-
+app.config["MONGO_URI"] = f'mongodb+srv://{user}:{passo}@cluster.lymw3.mongodb.net/usag?retryWrites=true&w=majority'
+#os.environ.get('MONGODB_URI', '')
 
 mongo = PyMongo(app)
 
 #client = MongoClient("mongodb://localhost:27017")
 #db = client['usag']
 # create database
-#db = mongo.db['us-agriculture']
-#db = mongo.db.usag
-
+#db = mongo['us-agriculture']
+db = mongo.db.usag
 # creating collection
-field_crops = mongo.db['field_crops']
-vegetables = mongo.db['vegetables']
-fruits = mongo.db['fruits']
-weather = mongo.db['weather']
-news = mongo.db['news']
-croplist = mongo.db['croplist']
+field_crops = db['field_crops']
+vegetables = db['vegetables']
+fruits = db['fruits']
+weather = db['weather']
+news = db['news']
+croplist = db['croplist']
 
 
 @app.route('/')
@@ -48,39 +44,22 @@ def home():
 @app.route('/index.html')
 def index():
     # Store the entire collection as a list
-    crops_list = list(field_crops.find())
-    vegetable_list = list(vegetables.find())
-    fruits_list = list(fruits.find())
-    weather_list = list(weather.find())
-    news_list = list(news.find())
-
     # Return the template
-    return render_template('index.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('index.html')
 
 
 @app.route('/dashboard.html')
 def dashboard_index():
     # Store the entire collection as a list
-    crops_list = list(field_crops.find())
-    vegetable_list = list(vegetables.find())
-    fruits_list = list(fruits.find())
-    weather_list = list(weather.find())
-    news_list = list(news.find())
     # Return the template
-    return render_template('dashboard.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('dashboard.html')
 
 
 @app.route('/plots.html')
 def plots_index():
-    # Store the entire collection as a list
-    crops_list = list(field_crops.find())
-    vegetable_list = list(vegetables.find())
-    fruits_list = list(fruits.find())
-    weather_list = list(weather.find())
-    news_list = list(news.find())
 
     # Return the template
-    return render_template('plots.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('plots.html')
 
 
 @app.route('/contact.html')
@@ -92,61 +71,48 @@ def contact():
 @app.route('/crops_map.html')
 def field_crops_index():
     # Store the entire collection as a list
-    crop_list = list(field_crops.find())
-    crops_list = json.dumps(crop_list, default=json_util.default)
+
     # Return the template
-    return render_template('crops_map.html', crops_list=crops_list)
+    return render_template('crops_map.html')
 
 
 @app.route('/fruits_map.html')
 def fruits_index():
     # Store the entire collection as a list
-    fruits_list = list(fruits.find())
+
     # Return the template
-    return render_template('fruits_map.html', fruits_list=fruits_list)
+    return render_template('fruits_map.html')
 
 
 @app.route('/vegetables_map.html')
 def vegetables_index():
     # Store the entire collection as a list
-    vegetable_list = list(vegetables.find())
 
     # Return the template
-    return render_template('vegetables_map.html',  vegetable_list=vegetable_list)
+    return render_template('vegetables_map.html')
 
 
 @app.route('/weather.html')
 def weather_index():
     # Store the entire collection as a list
-    weather_list = list(weather.find())
+
     # Return the template
-    return render_template('weather.html', weather_list=weather_list)
+    return render_template('weather.html')
 
 
 @app.route('/data.html')
 def data_index():
     # Store the entire collection as a list
-    crops_list = list(field_crops.find())
-    vegetable_list = list(vegetables.find())
-    fruits_list = list(fruits.find())
-    weather_list = list(weather.find())
-    news_list = list(news.find())
 
     # Return the template
-    return render_template('data.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('data.html')
 
 
 @app.route('/all_crops.html')
 def all_index():
-    # Store the entire collection as a list
-    crops_list = list(field_crops.find())
-    vegetable_list = list(vegetables.find())
-    fruits_list = list(fruits.find())
-    weather_list = list(weather.find())
-    news_list = list(news.find())
 
     # Return the template
-    return render_template('all_crops.html', crops_list=crops_list, vegetable_list=vegetable_list, fruits_list=fruits_list, weather_list=weather_list, news_list=news_list)
+    return render_template('all_crops.html')
 
 
 @app.route('/news.html')

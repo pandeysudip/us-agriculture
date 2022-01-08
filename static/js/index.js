@@ -4,7 +4,7 @@ function init() {
     d3.json('/data/croplist').then((data) => {
         //select the dropdown.
         var menu = d3.select("#selDataset");
-
+        console.log(data)
         //states.filter(onlyUnique)
         var uniqueCrops = data[0].crops
         uniqueCrops.forEach((crop) => {
