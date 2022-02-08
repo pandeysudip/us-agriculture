@@ -39,7 +39,7 @@ croplist = mongo.db['croplist']
 @app.route('/')
 def home():
     # Return the template
-    return render_template('app_home.html')
+    return render_template('index.html')
 
 
 @app.route('/index.html')
