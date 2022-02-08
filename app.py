@@ -4,7 +4,6 @@ from flask_pymongo import PyMongo
 import ag_news
 import json
 from bson import json_util
-from mongopass1 import user, passo
 import os
 
 
@@ -12,7 +11,6 @@ import os
 app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
-
 
 
 # "mongodb://localhost:27017/us-agriculture"
