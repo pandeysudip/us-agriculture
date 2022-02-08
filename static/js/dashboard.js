@@ -16,8 +16,16 @@ function onlyUnique(value, index, self) {
 
 //function for dropdown menu and initial graphs 
 function init() {
-    var agType = ["Field Crops", "Fruits", "Vegetables"];
-    var menu1 = d3.select("#selDataset2");
+    var agType = ['Administrative_Avg', 'Informational_Avg', 'ProductRelated_Avg',
+        'BounceRates', 'ExitRates', 'PageValues', 'SpecialDay', 'Month',
+        'OperatingSystems', 'Browser', 'Region', 'TrafficType', 'VisitorType',
+        'Weekend', 'Revenue'];
+    var menu1 = d3.select("#selDataset1");
+    agType.forEach((type) => {
+        menu1.append("option").text(type).property("value", type);
+    });
+
+    var menu2 = d3.select("#selDataset2");
     agType.forEach((type) => {
         menu1.append("option").text(type).property("value", type);
     });

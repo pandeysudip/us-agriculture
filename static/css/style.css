@@ -16,7 +16,28 @@ html {
 #map1{
   height: 800%;
 }
+body {
+  background: url('../Images/back2.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#back2 {
+  background: url('../Images/back1.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
 
+#back3 {
+  background: url('../Images/back3.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
 /* for id # and for class.*/
 /* no need to nested inside but easier to read*/
 .chartBox{
