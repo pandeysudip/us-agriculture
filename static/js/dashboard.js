@@ -16,10 +16,7 @@ function onlyUnique(value, index, self) {
 
 //function for dropdown menu and initial graphs 
 function init() {
-    var agType = ['Administrative_Avg', 'Informational_Avg', 'ProductRelated_Avg',
-        'BounceRates', 'ExitRates', 'PageValues', 'SpecialDay', 'Month',
-        'OperatingSystems', 'Browser', 'Region', 'TrafficType', 'VisitorType',
-        'Weekend', 'Revenue'];
+    var agType = [];
     var menu1 = d3.select("#selDataset1");
     agType.forEach((type) => {
         menu1.append("option").text(type).property("value", type);
