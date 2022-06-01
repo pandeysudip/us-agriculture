@@ -3,17 +3,17 @@ The website is deployed to Heroku at:
 https://usa-agriculture.herokuapp.com/
 
 ## Background 
-Our aim is to help our audience visualize the U.S agricultural production over the year 2017. To achieve this, we developed an interactive map that contain various information about agricultural products across the country. The platform will help the viewer identify the diversity and intensity of the U.S agricultural output.
+My aim is to help our audience visualize the U.S agricultural production over the year 2017. To achieve this, I developed an interactive map that contain various information about agricultural products across the country. The platform will help the viewer identify the diversity and intensity of the U.S agricultural output.
 
 The website contained an overview description of the US agriculture, then an interactive map paired with a dropdown menu where the viewer can obtain information by clicking or hovering their mouse on the various counties. A comparison of sales of specific crops per county, by State are provided with graphs. Peripheral info are provided to the viewer, such as images of the specific crop, and local agricultural news concerning the specific crop. Weather info also be provided to give the viewer an idea of the local climate and conditions for growth of the specific agricultural product.
 
 ![final_app_part0.png](Images/web0.png)
 
 ## MongoDB and Flask Application
-* We downloaded the data from USDA website which includes all the crops production in US county with sales amount.
-* We stroed the data in MongoDB database using pymongo. 
-* We have created a intrecative webpage using HTML, CSS, javascript,and Bootstrap.
-* We used MongoDB with Flask templating to create a new HTML page that displays all of the information.
+* Downloaded the data from USDA website which includes all the crops production in US county with sales amount.
+* Stroed the data in MongoDB database using pymongo. 
+* Created a intrecative webpage using HTML, CSS, javascript,and Bootstrap.
+* Used MongoDB with Flask templating to create a new HTML page that displays all of the information.
 
 * Created a different  routes  that query Mongo database and pass the data into an HTML template to display the data.
 
